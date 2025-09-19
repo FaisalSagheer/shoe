@@ -6,3 +6,17 @@ export const navItems = [
 //   { name: "Clients", href: "#clients" },
   { name: "Contact", href: "#contact" },
 ];
+
+
+
+export const clients = [
+  { name: "Netflix", logo: "N" },
+  { name: "Amazon", logo: "A" },
+  { name: "Disney", logo: "D" },
+  { name: "HBO", logo: "HBO" },
+  { name: "Apple", logo: "🍎" },
+  { name: "Spotify", logo: "S" },
+  { name: "Google", logo: "G" },
+  { name: "Microsoft", logo: "M" },
+];
+

@@ -1,5 +1,7 @@
 'use client'
+import Contact from '@/components/Contact'
 import Designer from '@/components/Designer'
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import LogoCloud from '@/components/LogoCloud'
 import Navbar from '@/components/Navbar'
@@ -20,6 +22,8 @@ function page() {
       <Designer/>
       <VideoAd/>
       <Testimonials/>
+      <Contact/>
+      <Footer/>
     </div>
   )
 }

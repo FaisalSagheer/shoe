@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav className="font-sans font-medium text-2xl fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-2">
             <Footprints className="h-12 w-12 text-white" />
             <span className="text-2xl font-bold text-white font-sans">
@@ -53,7 +53,7 @@ const Navbar = () => {
                 <li
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`px-3 py-2 text-2xl font-medium transition-colors ${
+                  className={`px-3 py-2 text-lg font-medium transition-colors ${
                     activeSection === item.href.substring(1)
                       ? "text-white border-b-2 border-white"
                       : "text-[#efe8e8] hover:text-[#F7F7F7]"
@@ -65,8 +65,8 @@ const Navbar = () => {
             </div>
           </div>
           <div className="text-white lg:flex relative hidden">
-            <ShoppingCart className="w-8 h-8" />
-            <span className="absolute -top-4 left-6">0</span>
+            <ShoppingCart className="w-6 h-6" />
+            <span className="absolute -top-4 left-6 text-lg">0</span>
           </div>
           <button
             className="md:hidden p-2"

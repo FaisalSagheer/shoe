@@ -1,54 +1,46 @@
-'use client'
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from "react";
+import { clients, testimonials } from "../constant";
+import { Star } from "lucide-react";
 
-export default function LogoCloud() {
+export default function LogoCloude() {
+  
+  const [currentClientIndex, setCurrentClientIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentClientIndex((prev) => (prev + 1) % clients.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [clients.length]);
+
   return (
-    <>
-  <div className="bg-gray-300 py-24 sm:py-32 text-center">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-lg/8 font-semibold text-gray-900">
-          Trusted by the world’s most innovative teams
-        </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          <img
-            alt="Transistor"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            />
-          <img
-            alt="Reform"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            />
-          <img
-            alt="Tuple"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            alt="SavvyCal"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-            />
-          <img
-            alt="Statamic"
-            src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-            />
+    //  Clients Section
+    <section id="clients" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl font-bold text-slate-900">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="text-xl text-slate-600">
+            Proud to have worked with these amazing brands and many more
+          </p>
         </div>
+
+        {/* Client Logos Slider */}
+        <div className="relative overflow-hidden bg-slate-50 rounded-xl py-8 mb-16">
+          <div className="flex animate-marquee space-x-16">
+            {[...clients, ...clients].map((client, index) => (
+              <div
+                key={`${client.name}-${index}`}
+                className="flex-shrink-0 w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center text-2xl font-bold text-slate-600"
+              >
+                {client.logo}
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
-            This Will Be a interactive slider
-    </div>
-    </>
-  )
+    </section>
+  );
 }

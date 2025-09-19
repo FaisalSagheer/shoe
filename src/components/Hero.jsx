@@ -4,7 +4,7 @@ import { Play, Star, Users, Trophy } from "lucide-react";
 
 function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center ">
+    <section id="hero" className="relative min-h-screen flex items-center pt-10">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -69,8 +69,12 @@ function Hero() {
             </div> */}
           </div>
 
-          <div className="hidden lg:block">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <div className="pt-50 text-center">
+            <h4 className="text-4xl">
+            Shoes Walking Animation
+            </h4>
+            <img src="./assets/hero-img.png" alt="/" />
+            {/* <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Quick Start Membership
               </h3>
@@ -87,7 +91,7 @@ function Hero() {
                   Get Started Today
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
